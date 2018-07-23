@@ -1,19 +1,79 @@
-<!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>sidebar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基于客服插件</title>
+<link href="../content/css/sidebar-style.css" rel="stylesheet" media="screen" type="text/css" />
 </head>
 <body>
-    <div>
-        <div>
-            <div>
-                sidebar
-            </div>
-            <div>
-                control
-            </div>
-        </div>
-    </div>
+
+<div class="container"></div>
+
+<!-- 客服部分 -->
+<div style="left:-230px;" class="contactusdiyou">
+	<div class="hoverbtn">
+		<span>联</span><span>系</span><span>我</span><span>们</span>
+		<img class="hoverimg" src="../content/images/hoverbtnbg1.gif" height="9" width="13">
+	</div>
+	<div class="conter">
+		<div class="con1"> 
+			<dl class="fn_cle">
+				<dt><img src="../content/images/tel.png" height="31" width="31"></dt>
+				<dd class="f1">咨询热线：</dd>
+				<dd class="f2"><span class="ph_num">187-9779-0616</span></dd>
+			</dl>
+		</div> 
+		<div class="blank0"></div>
+		<div class="qqcall"> 
+			<dl class="fn_cle">
+				<dt><img src="../content/images/zxkfqq.png" height="31" width="31"></dt>
+				<dd class="f1 f_s14">在线客服：</dd>
+				<dd class="f2 kefuQQ">
+					<span>客服一</span>
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=88888888&amp;site=qq&amp;menu=yes"></a>
+					<span>客服二</span>
+					<a target="_blank" href="#"></a>
+				</dd>
+			</dl>
+			<div class="blank0"></div>           
+		</div> 
+		<div class="blank0"></div>
+		<div class="weixincall"> 
+			<dl class="fn_cle">
+				<dt><img src="../content/images/weixin.png" height="31" width="31"></dt>
+				<dd class="f1">官方微信站：</dd>
+				<dd class="f3"><img src="../content/images/wechat_code.png" height="73" width="73"></dd>
+			</dl>
+		</div> 
+		<div class="blank0"></div>
+		<div class="dytimer">
+			<span style="font-weight: bold;">公司官网：</span>
+			<span><a href="http://www.jq22.com/">www.jq22.com</a></span>
+		</div>
+	</div>
+</div>
+
+<div class="diyoumask" style="height: 2000px;" ></div>
+
+<script src="../content/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+var isShow = false;
+$(function() {
+	$(".contactusdiyou").click(function() {
+        if(!isShow){
+            $(".hoverimg").attr("src","../content/images/hoverbtnbg.gif");
+            $('.diyoumask').fadeIn();
+            $('.contactusdiyou').animate({left:'0'},300); 
+            isShow = true;
+        }
+        else{
+            $(".hoverimg").attr("src","../content/images/hoverbtnbg1.gif");
+            $('.contactusdiyou').animate({left:'-230px'},300,function(){});
+            $('.diyoumask').fadeOut();
+            isShow = false;
+        }
+	});
+});
+</script>
+
 </body>
 </html>
