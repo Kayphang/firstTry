@@ -11,7 +11,7 @@
 <!-- 客服部分 -->
 <div style="left:-230px;" class="contactusdiyou">
 	<div class="hoverbtn">
-		<span>联</span><span>系</span><span>我</span><span>们</span>
+		<span>侧</span><span>边</span><span>菜</span><span>单</span>
 		<img class="hoverimg" src="../content/images/hoverbtnbg1.gif" height="9" width="13">
 	</div>
 	<div class="conter">
@@ -61,17 +61,24 @@ $(function() {
 	$(".contactusdiyou").click(function() {
         if(!isShow){
             $(".hoverimg").attr("src","../content/images/hoverbtnbg.gif");
-            $('.diyoumask').fadeIn();
+            //$('.diyoumask').fadeIn();
             $('.contactusdiyou').animate({left:'0'},300); 
             isShow = true;
         }
         else{
             $(".hoverimg").attr("src","../content/images/hoverbtnbg1.gif");
             $('.contactusdiyou').animate({left:'-230px'},300,function(){});
-            $('.diyoumask').fadeOut();
+            //$('.diyoumask').fadeOut();
             isShow = false;
         }
 	});
+});
+$(document).ready(function(){
+
+    function beforeUnloadHandler(event){
+    event.returnValue = "要离开吗？"
+}
+window.addEventListener('beforeunload',beforeUnloadHandler,true);
 });
 </script>
 
